@@ -2,6 +2,26 @@
   "name": "pigC",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
+  "author": {
+    "name": "jiaozi",
+    "email": "2321023924@qq.com"
+  },
+  "description": "react 的组件库，常用工具库",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "files": [
+    "es"
+  ],
+  "keywords": [
+    "react",
+    "css",
+    "flexbox",
+    "responsive",
+    "absolute",
+    "common components",
+    "common utils"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -20,10 +40,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rollup -c",
+    "build-v": "rollup --bundleConfigAsCjs",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -75,5 +94,8 @@
     "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^7.0.10",
     "webpack": "^5.82.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
