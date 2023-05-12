@@ -1,7 +1,7 @@
 {
   "name": "pigC",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "author": {
     "name": "jiaozi",
