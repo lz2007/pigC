@@ -44,7 +44,8 @@
     "build-v": "rollup --bundleConfigAsCjs",
     "test": "react-scripts test",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_9cb53c8b0480fc3"
   },
   "eslintConfig": {
     "extends": [
@@ -89,6 +90,7 @@
     "@storybook/testing-library": "^0.0.14-next.2",
     "autoprefixer": "^10.4.14",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "chromatic": "^6.17.4",
     "prop-types": "^15.8.1",
     "rollup-plugin-node-externals": "^6.0.0",
     "rollup-plugin-postcss": "^4.0.2",
@@ -97,5 +99,7 @@
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "pigC@0.1.0"
 }
