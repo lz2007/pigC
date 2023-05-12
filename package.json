@@ -40,7 +40,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rimraf es && rollup -c",
     "build-v": "rollup --bundleConfigAsCjs",
     "test": "react-scripts test",
     "storybook": "storybook dev -p 6006",
