@@ -13,11 +13,54 @@ PS：注意回顾 “Node 和 Element 和区别”
 
 ## 深度优先
 
-一般通过递归实现，代码参考 dom-traverse.ts
+一般通过递归实现，代码参考
+```ts
+/**
+ * 深度优先遍历
+ * @param root dom node
+ */
+export function depthFirstTraverse(root: Node) {
+    const stack = [root];
+    while (stack.length) {
+        const node = stack.pop();
+        if (node) {
+        console.log(node);
+        if (node.childNodes) {
+            for (let i = node.childNodes.length - 1; i >= 0; i--) {
+            stack.push(node.childNodes[i]);
+            }
+        }
+        }
+    }
+}
+```
 
 ## 广度优先
 
-一般通过队列实现，代码参考 dom-traverse.ts
+一般通过队列实现，代码参考
+```ts
+/**
+ * 广度优先遍历
+ * @param root dom node
+ */
+export function breadthFirstTraverse(root: Node) {
+    const queue: Node[] = [] // 数组 vs 链表
+
+    // 根节点入队列
+    queue.unshift(root)
+
+    while (queue.length > 0) {
+        const curNode = queue.pop()
+        console.log(curNode);
+        if (curNode == null) break
+        // 子节点入队
+        const childNodes = curNode.childNodes
+        if (childNodes.length) {
+            childNodes.forEach(child => queue.unshift(child))
+        }
+    }
+}
+```
 
 ## 解答
 
@@ -26,7 +69,7 @@ PS：注意回顾 “Node 和 Element 和区别”
 
 ## 连环问：深度优先可以不用递归吗？
 
-深度优先遍历，可以使用栈代替递归，递归本质上就是栈。代码参考 dom-traverse.ts
+深度优先遍历，可以使用栈代替递归，递归本质上就是栈
 
 递归和非递归哪个更好？
 - 递归逻辑更加清晰，但容易出现 `stack overflow` 错误（可使用`尾递归`，编译器有优化）

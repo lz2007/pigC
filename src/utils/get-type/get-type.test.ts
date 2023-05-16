@@ -1,4 +1,4 @@
-import getType from './get-type'
+import { getType } from './get-type'
 
 it('getType number 类型', () => {
     expect(getType(1)).toBe('number')
