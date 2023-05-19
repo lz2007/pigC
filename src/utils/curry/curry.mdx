@@ -1,0 +1,43 @@
+
+import { Meta } from '@storybook/blocks';
+<Meta title="工具/curry add" />
+# curry add
+
+## 题目
+
+写一个 `curry` 函数，可以把其他函数转为 curry 函数
+
+```js
+function add(a, b, c) { return a + b + c }
+add(1, 2, 3) // 6
+
+const curryAdd = curry(add)
+curryAdd(1)(2)(3) // 6
+```
+
+## 解答
+
+代码参考
+```ts
+export function curry(fn: Function) {
+    const len = fn.length;
+    const args: any[] = [];
+
+    const result = function (...rest: any[]) {
+        args.push(...rest);
+        if (args.length === len) {
+            return fn(...args);
+        } else {
+            return result;
+        }
+    }
+    return result;
+}
+
+```
+
+## 总结
+
+- 判断参数长度
+- 中间态返回函数，最后返回执行结果
+- 如用 this 慎用箭头函数
